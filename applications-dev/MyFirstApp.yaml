@@ -1,0 +1,54 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: MyFirstApp
+  namespace: argocd
+spec:
+  # Project description
+  description: A supper dupper first project
+
+  # Allow manifests to deploy from any Git repos
+  sourceRepos:
+  - '*'
+
+  # Only permit applications to deploy to the guestbook namespace in the same cluster
+  destinations:
+  - namespace: guestbook
+    server: https://kubernetes.default.svc
+
+  # Deny all cluster-scoped resources from being created, except for Namespace
+  clusterResourceWhitelist:
+  - group: ''
+    kind: Namespace
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: MyFirstApp-devci
+  namespace: argocd
+spec:
+  project: MyFirstApp
+  environment: devci
+  source:
+    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    targetRevision: HEAD
+    path: myfirstapp
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: devci
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: MyFirstApp-uat
+  namespace: argocd
+spec:
+  project: MyFirstApp
+  environment: uat
+  source:
+    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    targetRevision: HEAD
+    path: myfirstapp
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: uat
