@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   # Project description
-  description: A supper dupper first project
+  description: A supper upper-dupper first project
 
   # Allow manifests to deploy from any Git repos
   sourceRepos:
