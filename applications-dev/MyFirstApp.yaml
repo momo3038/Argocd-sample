@@ -33,6 +33,8 @@ spec:
     repoURL: https://github.com/argoproj/argocd-example-apps.git
     targetRevision: HEAD
     path: myfirstapp
+    helm:
+      valueFiles: devci/values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: devci
@@ -49,6 +51,8 @@ spec:
     repoURL: https://github.com/argoproj/argocd-example-apps.git
     targetRevision: HEAD
     path: myfirstapp
+    helm:
+      valueFiles: uat/values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: uat

@@ -3,7 +3,7 @@ kind: AppProject
 metadata:
   name: MySecondApp
   namespace: argocd
-spec
+spec:
   # Project description
   description: A supper dupper first project
 
@@ -33,6 +33,8 @@ spec:
     repoURL: https://github.com/argoproj/argocd-example-apps.git
     targetRevision: HEAD
     path: mysecondapp
+    helm:
+      valueFiles: devci/values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: devci
@@ -49,6 +51,8 @@ spec:
     repoURL: https://github.com/argoproj/argocd-example-apps.git
     targetRevision: HEAD
     path: mysecondapp
+    helm:
+      valueFiles: uat/values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: uat
