@@ -7,6 +7,6 @@ components:
     version: mythirdcomponent:1.0.0.0
 front:
   - name: MyFirstFront
-    version: "myfirstfront:9.2.0.1"
+    version: myfirstfront:11.2.0.1
   - name: MySecondFront
-    version: "mysecondfront:1.0.0.0"
+    version: mysecondfront:1.0.0.0
