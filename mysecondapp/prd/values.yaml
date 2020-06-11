@@ -6,4 +6,4 @@ components:
   - name: MyThirdComponent
     version: mythirdcomponent:1.0.0.0
 front:
-    version: "myfirstfront:11.1.0.1"
+  version: myfirstfront:11.2.0.1
