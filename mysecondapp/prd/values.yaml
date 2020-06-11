@@ -1,10 +1,10 @@
 components:
   - name: MyFirstComponent
-    version: 0.1.2.3.4
+    version: myfirstcomponent:1.0.0.3
   - name: MySecondComponent
-    version: 5.6.7.8
+    version: mysecondcomponent:11.2.0.1
   - name: MyThirdComponent
-    version: 9.10.11.12
+    version: mythirdcomponent:1.0.0.0
 front:
   - name: MyFirstFront
     version: "myfirstfront:9.2.0.1"
