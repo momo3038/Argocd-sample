@@ -1,6 +1,6 @@
 components:
   - name: MyFirstComponent
-    version: "myfirstcomponent:3.0.0.3"
+    version: "myfirstcomponent:4.0.0.3"
   - name: MySecondComponent
     version: "mysecondcomponent:11.2.0.1"
   - name: MyThirdComponent
